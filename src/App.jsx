@@ -9,7 +9,7 @@ import { BaseTareas } from "./assets/BaseTareas";
 
 function App() {
   const [tareas, setTareas] = useState(BaseTareas);
-  const [buscar, setBuscar] = useState('');
+  const [buscar, setBuscar] = useState("");
 
   const agregarTarea = (descripcion) => {
     const nuevaTarea = {
@@ -21,7 +21,7 @@ function App() {
     setTareas([...tareas, nuevaTarea]);
   };
 
-  const tareasFiltradas = tareas.filter((tarea) => 
+  const tareasFiltradas = tareas.filter((tarea) =>
     tarea.descripcion.toLowerCase().includes(buscar.toLowerCase())
   );
 
@@ -34,10 +34,10 @@ function App() {
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col md={6} sm={12}>
             <Listado tareas={tareasFiltradas} />
           </Col>
-          <Col>
+          <Col md={6}>
             <Formulario agregarTarea={agregarTarea} />
           </Col>
         </Row>
